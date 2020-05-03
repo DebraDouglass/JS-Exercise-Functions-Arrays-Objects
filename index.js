@@ -51,12 +51,16 @@ sayGoodbye("Sue");
  * passing 24 as the argument,
  * the returned value should be: 75
  * 
- * Hint 1: The formula for converting celsius to fahrenheit is t*9/5 + 32 where t is the temperature in celsius.
+ * Hint 1: The formula for converting celsius to fahrenheit is t*9/5 + 32 
+ * where t is the temperature in celsius.
  * Hint 2: There is a very easy way to round numbers in JS. Do a google search to find out how. 
 */
-function temperatureCtoF() {
-
+function temperatureCtoF(celsius) {
+  const cTemp = celsius;
+  const cToFahr = Math.round(cTemp * 9 / 5 + 32);
+  return `${cTemp}\xB0C is ${cToFahr}\xB0F.`;
 }
+temperatureCtoF(40);
 
 /**
  * ### Challenge `temperatureInF`
@@ -75,8 +79,8 @@ function temperatureCtoF() {
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(/* code here */) {
-  /* code here */
+function temperatureInF(temperature,unit) {
+  
 }
 
 /**
@@ -95,9 +99,14 @@ function temperatureInF(/* code here */) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
+function makePersonObject(id, name, email) {
+  return {
+    id: id,
+    name: name,
+    email: email,
+  };
 }
+makePersonObject(5,'leia','leia@leia.com')
 
 /**
  * ### Challenge `getName`
@@ -112,10 +121,9 @@ function makePersonObject(/* code here */) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  /* code here */
+function getName(myObj){
+  return `Hello, my name is ${myObj.name}`;
 }
-
 
 /**
  * ### Challenge `appleIndex`
